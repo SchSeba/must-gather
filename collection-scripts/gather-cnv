@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Resource List
+resources=()
+
+# CNV Namespaces
+resources+=(ns/kubevirt)
+
+# Run the Collection of Resources using must-gather
+for resource in ${resources[@]}; do
+    /usr/bin/openshift-must-gather inspect ${resource}
+done
