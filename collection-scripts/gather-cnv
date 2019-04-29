@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set +e
-
 # Resource List
 resources=()
 
@@ -12,3 +10,5 @@ resources+=(ns/kubevirt)
 for resource in ${resources[@]}; do
     /usr/bin/openshift-must-gather inspect ${resource}
 done
+
+exit 0
