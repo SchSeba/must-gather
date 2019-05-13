@@ -4,11 +4,14 @@
 resources=()
 
 # CNV Namespaces
-resources+=(ns/kubevirt)
+resources+=(ns/kubevirt ns/cdi)
 
 # Run the Collection of Resources using must-gather
 for resource in ${resources[@]}; do
     /usr/bin/openshift-must-gather inspect ${resource}
 done
+
+# Collect VMs definition
+/usr/bin/gather-cnv-vm-definition
 
 exit 0
