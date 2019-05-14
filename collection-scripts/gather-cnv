@@ -6,6 +6,9 @@ resources=()
 # CNV Namespaces
 resources+=(ns/kubevirt ns/cdi)
 
+# VM and VMI
+resources+=(vm vmi)
+
 # Run the Collection of Resources using must-gather
 for resource in ${resources[@]}; do
     /usr/bin/openshift-must-gather inspect ${resource}
