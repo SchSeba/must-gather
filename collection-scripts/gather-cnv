@@ -17,7 +17,7 @@ resources+=(v2vvmwares)
 
 # Run the Collection of Resources using must-gather
 for resource in ${resources[@]}; do
-  /usr/bin/openshift-must-gather inspect ${resource}
+  /usr/bin/openshift-must-gather inspect --all-namespaces ${resource}
 done
 
 # Collect namespaces that contains VMs
